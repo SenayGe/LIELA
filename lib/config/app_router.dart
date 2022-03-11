@@ -6,16 +6,16 @@ import '../screens.dart';
 class AppRouter {
   static Route generateRoute (RouteSettings settings ){
 
-    // For passing arguments
+    // For passing arguments and values
     final args = settings.arguments;
 
     print ('The route is ${settings.name}');
 
     switch (settings.name){
-      case '/':
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+      // case '/':
+      //   return MaterialPageRoute(builder: (_) => HomeScreen());
       case HomeScreen.routeName:
-        return HomeScreen.route();
+        return MaterialPageRoute(builder: (_) => HomeScreen());
       case '/LoginScreen':
         if (args is String){
           return MaterialPageRoute(
@@ -34,6 +34,16 @@ class AppRouter {
 
   }
 
- // static Route _errorRoute() {}
+  static Route _errorRoute (){
+    return MaterialPageRoute(builder: (_){
+      return Scaffold(
+        appBar: AppBar(
+          title: Text ('Error'),
+        ),
+        body: Center(child: Text('ERROR')),
+      );
+    });
+
+  }
 
 }
