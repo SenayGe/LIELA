@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liela/models/models.dart';
+import 'package:liela/widgets/custom_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = '/ ';
@@ -21,8 +22,9 @@ class HomeScreen extends StatelessWidget {
             Image.asset(
               'assets/images/logo.png',
               fit: BoxFit.contain,
-              height: 38,
+              height: 30,
             ),
+            //appLogo,
             Container(
               padding: EdgeInsets.all(10.0),
               child: Text('LIELA', style: TextStyle(color: Colors.red.shade300),)),
@@ -33,14 +35,16 @@ class HomeScreen extends StatelessWidget {
         ],
 
       ),
-      //body: UserCard (user: User.users[0]),
+      body: UserCard (user: User.users[0]),
     );
   }
 
+
+  // Loading logo image and defining size
   Image appLogo = new Image(
       image: new ExactAssetImage("assets/images/logo.png"),
-      height: 28.0,
-      width: 20.0,
+      height: 38.0,
+      width: 30.0,
       alignment: FractionalOffset.center);
 }
 
