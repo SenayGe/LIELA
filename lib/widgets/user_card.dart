@@ -27,7 +27,42 @@ class UserCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5),
                 boxShadow: [
                   BoxShadow(color: Colors.grey.withOpacity(0.5), offset: Offset(3, 3), spreadRadius: 4, blurRadius: 4),
-                ]
+                ],
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [
+                      Color.fromARGB(200, 0, 0, 0),
+                      Color.fromARGB(0, 0, 0, 0),
+                    ],
+                  )
+              ),
+            ),
+            Positioned(
+              bottom: 30,
+              left: 20,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '${user.name}, ${user.age}',
+                    style: Theme.of(context).textTheme.headline5!.copyWith(color: Colors.white)
+                      ),
+                  Text(
+                    '${user.jobTitle}',
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal),
+
+
+                  ),
+
+                ],
               ),
             ),
           ],
