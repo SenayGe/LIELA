@@ -34,9 +34,9 @@ class User extends Equatable{
       name: 'Asm',
       age: 20,
       imageUrls: [
-        'https://unsplash.com/photos/yihlaRCCvd4',
+        'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80',
+        'https://images.unsplash.com/photo-1563889362352-b0492c224f62?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
         'https://unsplash.com/photos/gsMSU6Pg_QI',
-        'https://unsplash.com/photos/SCIRnLEtqWc',
         'https://unsplash.com/photos/Ri6DjpT7uPc',
         'https://unsplash.com/photos/UJr_TCSObWY',
       ],

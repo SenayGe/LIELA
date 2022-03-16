@@ -45,7 +45,7 @@ class UserCard extends StatelessWidget {
             ),
             Positioned(
               bottom: 30,
-              left: 20,
+              left: 18,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -53,6 +53,7 @@ class UserCard extends StatelessWidget {
                     '${user.name}, ${user.age}',
                     style: Theme.of(context).textTheme.headline5!.copyWith(color: Colors.white)
                       ),
+                  SizedBox(height: 5,),
                   Text(
                     '${user.jobTitle}',
                     style: Theme.of(context).textTheme.headline6!.copyWith(

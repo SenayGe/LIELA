@@ -27,7 +27,14 @@ class HomeScreen extends StatelessWidget {
             //appLogo,
             Container(
               padding: EdgeInsets.all(10.0),
-              child: Text('LIELA', style: TextStyle(color: Colors.red.shade300),)),
+              child: Text('LIELA', style: Theme.of(context).textTheme.headline5!.copyWith(
+                color: Colors.red.shade700,
+                fontStyle: FontStyle.italic,)
+              )
+              //Text('LIELA', style: TextStyle(color: Colors.red),)
+
+            ),
+
           ],
         ),
         actions: [

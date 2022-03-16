@@ -12,11 +12,11 @@ class AppRouter {
     print ('The route is ${settings.name}');
 
     switch (settings.name){
-      // case '/':
-      //   return MaterialPageRoute(builder: (_) => HomeScreen());
+      case '/':
+        return MaterialPageRoute(builder: (_) => HomeScreen());
       case HomeScreen.routeName:
         return MaterialPageRoute(builder: (_) => HomeScreen());
-      case '/LoginScreen':
+    /*case '/LoginScreen':
         if (args is String){
           return MaterialPageRoute(
               builder: (_) => LoginScreen(
@@ -25,8 +25,8 @@ class AppRouter {
           );
         }
         // If args is not of the correct type
-        return _errorRoute(); //TODO: Define _errorRoutee()
-      // case LoginScreen.route();
+        return _errorRoute(); //TODO: Define _errorRoutee()*/
+
       default:
         return _errorRoute();
 
