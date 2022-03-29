@@ -51,7 +51,7 @@ class UserCard extends StatelessWidget {
                 children: [
                   Text(
                     '${user.name}, ${user.age}',
-                    style: Theme.of(context).textTheme.headline5!.copyWith(color: Colors.white)
+                    style: Theme.of(context).textTheme.headline5!.copyWith(color: Colors.white, fontWeight: FontWeight.bold)
                       ),
                   SizedBox(height: 5,),
                   Text(
@@ -59,8 +59,14 @@ class UserCard extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline6!.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.normal),
-
-
+                  ),
+                  Row(
+                    children: [
+                      UserSmallPic(imgUrl: user.imageUrls[1],),
+                      UserSmallPic(imgUrl: user.imageUrls[4],),
+                      UserSmallPic(imgUrl: user.imageUrls[3],),
+                      UserSmallPic(imgUrl: user.imageUrls[2],),
+                    ],
                   ),
 
                 ],
@@ -68,6 +74,34 @@ class UserCard extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class UserSmallPic extends StatelessWidget {
+  const UserSmallPic({
+    Key? key,
+    required this.imgUrl,
+  }) : super(key: key);
+
+  final String imgUrl;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(
+        top: 8.0,
+        right: 8.0,
+      ),
+      height: 70,
+      width: 70,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: NetworkImage (imgUrl),
+        ),
+        borderRadius: BorderRadius.circular(5.0)
       ),
     );
   }
