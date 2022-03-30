@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liela/models/models.dart';
-import 'package:liela/widgets/custom_widgets.dart';
+import 'package:liela/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = '/ ';
@@ -13,35 +13,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,//Text('Liela', style: TextStyle(color: Colors.red.shade300),),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/logo.png',
-              fit: BoxFit.contain,
-              height: 30,
-            ),
-            //appLogo,
-            Container(
-              padding: EdgeInsets.all(10.0),
-              child: Text('LIELA', style: Theme.of(context).textTheme.headline5!.copyWith(
-                color: Colors.red.shade700,
-                fontStyle: FontStyle.italic,)
-              )
-              //Text('LIELA', style: TextStyle(color: Colors.red),)
-
-            ),
-
-          ],
-        ),
-        actions: [
-          IconButton(icon: Icon(Icons.filter_alt_outlined, color: Theme.of(context).primaryColor,) , onPressed: (){})
-        ],
-
-      ),
+      appBar: CustomAppBar(),
       body: UserCard (user: User.users[0]),
     );
   }
@@ -54,6 +26,8 @@ class HomeScreen extends StatelessWidget {
       width: 30.0,
       alignment: FractionalOffset.center);
 }
+
+
 
 /*class UserCard extends StatelessWidget {
   final User user;
