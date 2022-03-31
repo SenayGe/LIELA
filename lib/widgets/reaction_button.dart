@@ -21,8 +21,8 @@ class ReactionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 60.0,
-      height: 60.0,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: color,
