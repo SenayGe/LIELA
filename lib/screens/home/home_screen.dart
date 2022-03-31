@@ -14,7 +14,23 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      body: UserCard (user: User.users[0]),
+      body: Column(
+        children: [
+          UserCard (user: User.users[0]),
+          Padding(
+            padding: const EdgeInsets.only(top: 15.0, right: 50.0, left: 50.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ReactionButton(width: 60,height: 60, color: Colors.white60, icon: Icons.clear_rounded, iconColor: Colors.redAccent,),
+                ReactionButton(width: 80,height: 80, color: Colors.white60, icon: Icons.favorite_rounded, iconColor: Colors.greenAccent.shade700),
+                ReactionButton(width: 60,height: 60, color: Colors.white60, icon: Icons.watch_later_rounded,iconSize: 38, iconColor: Colors.deepPurpleAccent,),
+              ],
+            ),
+          ),
+
+        ],
+      ),
     );
   }
 
@@ -26,6 +42,10 @@ class HomeScreen extends StatelessWidget {
       width: 30.0,
       alignment: FractionalOffset.center);
 }
+
+
+
+
 
 
 
