@@ -31,7 +31,7 @@ class User extends Equatable{
   static List<User> users = [
     User(
       id: 1,
-      name: 'Asm',
+      name: 'Asmir',
       age: 20,
       imageUrls: [
         'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80',
@@ -49,7 +49,7 @@ class User extends Equatable{
         name: 'Mer',
         age: 25,
         imageUrls: [
-          'https://unsplash.com/photos/Md73BFRHR0A',
+          'https://images.unsplash.com/photo-1545591796-e2936bb2bca3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
           'https://unsplash.com/photos/-lyP0OYsEtI',
           'https://unsplash.com/photos/2lgTyxm79ls',
           'https://unsplash.com/photos/NDUfajkNA6I',
