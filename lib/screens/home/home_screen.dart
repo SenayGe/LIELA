@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:liela/blocs/swipe/swipe_bloc.dart';
 import 'package:liela/models/models.dart';
 import 'package:liela/widgets/widgets.dart';
 
@@ -14,35 +16,48 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      body: Column(
-        children: [
-          Draggable(
-            child: UserCard (user: User.users[0]),
-            feedback: UserCard(user: User.users[0],),
-            childWhenDragging: UserCard(user: User.users[1],),
-            onDragEnd: (drag){
-              if (drag.velocity.pixelsPerSecond.dx< 0.0)
-                print('swiped left');
-              else
-                print ('swiped right');
-
-
-            },
-
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 15.0, right: 50.0, left: 50.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: BlocBuilder<SwipeBloc, SwipeState>(
+        builder: (context, state) {
+          if (state is SwipeLoading){
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          else if (state is SwipeLoaded){
+            return Column(
               children: [
-                ReactionButton(width: 60,height: 60, color: Colors.white60, icon: Icons.clear_rounded, iconColor: Colors.redAccent,),
-                ReactionButton(width: 80,height: 80, color: Colors.white60, icon: Icons.favorite_rounded, iconColor: Colors.greenAccent.shade700),
-                ReactionButton(width: 60,height: 60, color: Colors.white60, icon: Icons.watch_later_rounded,iconSize: 38, iconColor: Colors.deepPurpleAccent,),
-              ],
-            ),
-          ),
+                Draggable(
+                  child: UserCard (user: state.users[0]),
+                  feedback: UserCard(user: state.users[0],),
+                  childWhenDragging: UserCard(user: state.users[1],),
+                  onDragEnd: (drag){
+                    if (drag.velocity.pixelsPerSecond.dx< 0.0)
+                      context.read<SwipeBloc>()
+                        .. add (SwipeLeftEvent(user: state.users[0]));
+                    else
+                      context.read<SwipeBloc>()
+                        .. add (SwipeRightEvent(user: state.users[0]));
+                  },
 
-        ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15.0, right: 50.0, left: 50.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ReactionButton(width: 60,height: 60, color: Colors.white60, icon: Icons.clear_rounded, iconColor: Colors.redAccent,),
+                      ReactionButton(width: 80,height: 80, color: Colors.white60, icon: Icons.favorite_rounded, iconColor: Colors.greenAccent.shade700),
+                      ReactionButton(width: 60,height: 60, color: Colors.white60, icon: Icons.watch_later_rounded,iconSize: 38, iconColor: Colors.deepPurpleAccent,),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          }
+          else {
+            return Text ("Error");
+          }
+        }
       ),
     );
   }
