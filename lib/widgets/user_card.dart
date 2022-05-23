@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liela/models/user_model.dart';
+import 'package:liela/widgets/widgets.dart';
 
 class UserCard extends StatelessWidget {
   final User user;
@@ -8,6 +9,7 @@ class UserCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+
       padding: const EdgeInsets.only(
         top: 10.0,
         left: 20.0,
@@ -24,9 +26,9 @@ class UserCard extends StatelessWidget {
                   fit: BoxFit.cover,
                   image: NetworkImage(user.imageUrls[0]),
                 ),
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(10),
                 boxShadow: [
-                  BoxShadow(color: Colors.grey.withOpacity(0.5), offset: Offset(3, 3), spreadRadius: 4, blurRadius: 4),
+                  BoxShadow(color: Colors.grey.withOpacity(0.5), offset: Offset(3, 3), spreadRadius: 3, blurRadius: 3),
                 ],
               ),
             ),
@@ -51,7 +53,7 @@ class UserCard extends StatelessWidget {
                 children: [
                   Text(
                     '${user.name}, ${user.age}',
-                    style: Theme.of(context).textTheme.headline5!.copyWith(color: Colors.white, fontWeight: FontWeight.bold)
+                    style: Theme.of(context).textTheme.headline5!.copyWith(color : Colors.white, fontWeight: FontWeight.bold)
                       ),
                   SizedBox(height: 5,),
                   Text(
@@ -79,30 +81,4 @@ class UserCard extends StatelessWidget {
   }
 }
 
-class UserSmallPic extends StatelessWidget {
-  const UserSmallPic({
-    Key? key,
-    required this.imgUrl,
-  }) : super(key: key);
 
-  final String imgUrl;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(
-        top: 8.0,
-        right: 8.0,
-      ),
-      height: 70,
-      width: 70,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: NetworkImage (imgUrl),
-        ),
-        borderRadius: BorderRadius.circular(5.0)
-      ),
-    );
-  }
-}
