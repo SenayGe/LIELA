@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(
-              create: (_) =>
-                  SwipeBloc()..add(LoadUsersEvent(users: User.users)))
+              create: (_) => SwipeBloc()..add(LoadUsersEvent(users: User.users)))
         ],
         child: MaterialApp(
           title: 'Liela dating app',
