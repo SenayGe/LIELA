@@ -2,8 +2,9 @@ part of 'swipe_bloc.dart';
 
 
 abstract class SwipeState extends Equatable{
-  const SwipeState();
-
+  // const SwipeState();
+  List<User> users = [];
+  SwipeState();
   @override
   List<Object?> get props => [];
 
@@ -13,10 +14,10 @@ abstract class SwipeState extends Equatable{
 class SwipeLoading extends SwipeState{}
 
 class SwipeLoaded extends SwipeState{
-  final List<User> users;
-  const SwipeLoaded({
-    required this.users;
-});
+
+  SwipeLoaded({required users}){
+    super.users = users;
+  }
 
   @override
   List<Object?> get props => [users];
