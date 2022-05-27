@@ -7,21 +7,29 @@ part 'swipe_event.dart';
 part 'swipe_state.dart';
 
 class SwipeBloc extends Bloc<SwipeEvent, SwipeState>{
-  SwipeBloc(): super(SwipeLoading());
+  SwipeBloc(): super(SwipeLoading()){
+    on<LoadUsersEvent>(_onLoadUsers);
+    //on<Decrement>(_onDecrement);
 
-  @override
-  Stream<SwipeState> mapEventsTosState (SwipeEvent event) async* {
-    if (event is LoadUsersEvent){
-      yield* _mapLoadUsersToState(event);
-    }
-    if (event is SwipeLeftEvent){
-      yield* _mapSwipeLeftToState(event, state);
-    }
-    if (event is SwipeRightEvent){
-      yield* _mapSwipeRightToState(event, state);
-    }
   }
 
+  // @override
+  // Stream<SwipeState> mapEventsTosState (SwipeEvent event) async* {
+  //   if (event is LoadUsersEvent){
+  //     print ("check hereeeeeee");
+  //     yield* _mapLoadUsersToState(event);
+  //   }
+  //   if (event is SwipeLeftEvent){
+  //     yield* _mapSwipeLeftToState(event, state);
+  //   }
+  //   if (event is SwipeRightEvent){
+  //     yield* _mapSwipeRightToState(event, state);
+  //   }
+
+
+  void _onLoadUsers (LoadUsersEvent event, Emitter<SwipeState> emit) {
+    emit(SwipeLoaded(users: event.users));
+  }
   Stream<SwipeState> _mapLoadUsersToState (LoadUsersEvent event) async* {
       yield SwipeLoaded(users: event.users);
   }
