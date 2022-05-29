@@ -50,10 +50,10 @@ class User extends Equatable{
         age: 25,
         imageUrls: [
           'https://images.unsplash.com/photo-1545591796-e2936bb2bca3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-          'https://unsplash.com/photos/-lyP0OYsEtI',
-          'https://unsplash.com/photos/2lgTyxm79ls',
-          'https://unsplash.com/photos/NDUfajkNA6I',
-          'https://unsplash.com/photos/Olt577JtPM0',
+          'https://images.unsplash.com/photo-1589400867230-3491ceee2934?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80',
+          'https://images.unsplash.com/photo-1578616660168-00c572ede4ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+          'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80',
+          'https://images.unsplash.com/photo-1598974357801-cbca100e65d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80',
         ],
         bio: 'My bio goes here',
         jobTitle: 'Job Title here'
