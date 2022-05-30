@@ -34,10 +34,12 @@ class SwipeBloc extends Bloc<SwipeEvent, SwipeState>{
     emit(SwipeLoaded(users: event.users));
   }
   void _onSwipeLeft (SwipeLeftEvent event,  Emitter<SwipeState> emit) {
+    final state = this.state;
     if (state is SwipeLoaded){
         try{
           //TODO : implement function
           emit(SwipeLoaded(users: List.from(state.users)..remove(event.user)));
+
       }
       catch(_){}
       }
@@ -52,28 +54,36 @@ class SwipeBloc extends Bloc<SwipeEvent, SwipeState>{
   }
 
   void _onSwipeRight (SwipeRightEvent event,  Emitter<SwipeState> emit) {
-    emit(SwipeLoaded(users: List.from(state.users)..remove(event.user)));
-  }
-  Stream<SwipeState> _mapLoadUsersToState (LoadUsersEvent event) async* {
-      yield SwipeLoaded(users: event.users);
-  }
-  Stream<SwipeState> _mapSwipeLeftToState (SwipeLeftEvent event, SwipeState state) async* {
+    final state = this.state;
     if (state is SwipeLoaded){
       try{
         //TODO : implement function
-        yield SwipeLoaded(users: List.from(state.users)..remove(event.user));
+        emit(SwipeLoaded(users: List.from(state.users)..remove(event.user)));
+
       }
       catch(_){}
     }
   }
-  Stream<SwipeState> _mapSwipeRightToState (SwipeRightEvent event, SwipeState state) async* {
-    //TODO: implement
-    if (state is SwipeLoaded){
-      try{
-        //TODO : implement function
-        yield SwipeLoaded(users: List.from(state.users)..remove(event.user));
-      }
-      catch(_){}
-    }
-  }
+  // Stream<SwipeState> _mapLoadUsersToState (LoadUsersEvent event) async* {
+  //     yield SwipeLoaded(users: event.users);
+  // }
+  // Stream<SwipeState> _mapSwipeLeftToState (SwipeLeftEvent event, SwipeState state) async* {
+  //   if (state is SwipeLoaded){
+  //     try{
+  //       //TODO : implement function
+  //       yield SwipeLoaded(users: List.from(state.users)..remove(event.user));
+  //     }
+  //     catch(_){}
+  //   }
+  // }
+  // Stream<SwipeState> _mapSwipeRightToState (SwipeRightEvent event, SwipeState state) async* {
+  //   //TODO: implement
+  //   if (state is SwipeLoaded){
+  //     try{
+  //       //TODO : implement function
+  //       yield SwipeLoaded(users: List.from(state.users)..remove(event.user));
+  //     }
+  //     catch(_){}
+  //   }
+  // }
 }
