@@ -38,6 +38,8 @@ class SwipeBloc extends Bloc<SwipeEvent, SwipeState>{
     if (state is SwipeLoaded){
         try{
           //TODO : implement function
+          //List<User> _users = List.from(state.users)..remove(event.user);
+          final _users = [event.user, User.users[0]];
           emit(SwipeLoaded(users: List.from(state.users)..remove(event.user)));
 
       }
@@ -58,7 +60,8 @@ class SwipeBloc extends Bloc<SwipeEvent, SwipeState>{
     if (state is SwipeLoaded){
       try{
         //TODO : implement function
-        emit(SwipeLoaded(users: List.from(state.users)..remove(event.user)));
+
+        emit(SwipeLoaded(users:  List.from(state.users)..remove(event.user)));
 
       }
       catch(_){}
