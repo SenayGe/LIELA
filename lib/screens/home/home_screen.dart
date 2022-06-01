@@ -5,10 +5,11 @@ import 'package:liela/models/models.dart';
 import 'package:liela/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const String routeName = '/homescreen ';
+  static const String routeName = '/home ';
   static Route route() {
     return MaterialPageRoute(
-        builder: (_) => HomeScreen(), settings: RouteSettings(name: routeName));
+        builder: (context) => HomeScreen(),
+        settings: RouteSettings(name: routeName));
   }
 
   @override
