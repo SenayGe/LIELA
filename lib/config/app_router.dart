@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:liela/Screens/user/users_screen.dart';
 
 import '../screens.dart';
 
@@ -16,6 +17,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => HomeScreen());
       case HomeScreen.routeName:
         return MaterialPageRoute(builder: (_) => HomeScreen());
+      case UsersScreen.routeName:
+        return MaterialPageRoute(builder: (_) => UsersScreen());
     /*case '/LoginScreen':
         if (args is String){
           return MaterialPageRoute(
