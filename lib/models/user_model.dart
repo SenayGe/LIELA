@@ -41,7 +41,7 @@ class User extends Equatable{
         'https://images.unsplash.com/photo-1584653059740-fb6fb91eeeff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
         'https://images.unsplash.com/photo-1545591796-e2936bb2bca3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
       ],
-      bio: 'My bio goes here',
+      bio: 'My bio goes here lkdjf skdjfskd lskdk slkdfjji lksiels ksilei sjkjfoen mnakeiuf jkdhwohot kskolt lsltihd ekhst',
       jobTitle: 'Job Title here'
         ),
     User(
@@ -55,7 +55,7 @@ class User extends Equatable{
           'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80',
           'https://images.unsplash.com/photo-1598974357801-cbca100e65d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80',
         ],
-        bio: 'My bio goes here',
+        bio: 'My bio goes here lkdjf skdjfskd lskdk slkdfjji lksiels ksilei sjkjfoen mnakeiuf jkdhwohot kskolt lsltihd ekhst ',
         jobTitle: 'Job Title here'
     ),
     User(

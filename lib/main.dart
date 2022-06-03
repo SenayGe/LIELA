@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:liela/Screens/user/user_screen.dart';
 import 'package:liela/blocs/swipe/swipe_bloc.dart';
 import 'package:liela/screens.dart';
 import 'package:liela/config/app_router.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(
-              create: (_) => SwipeBloc()..add(LoadUsersEvent(users: User.users)))
+              create: (context) => SwipeBloc()..add(LoadUsersEvent(users: User.users)))
         ],
         child: MaterialApp(
           title: 'Liela dating app',
@@ -33,8 +34,9 @@ class MyApp extends StatelessWidget {
             // is not restarted.
             primarySwatch: Colors.grey,
           ),
-          initialRoute: '/',
           onGenerateRoute: AppRouter.generateRoute,
+          initialRoute: HomeScreen.routeName,
+
         ));
   }
 }
