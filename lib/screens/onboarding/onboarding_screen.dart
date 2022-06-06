@@ -5,8 +5,26 @@ class OnboardingScreen extends StatelessWidget {
   static const String routeName = '/onboarding';
   const OnboardingScreen({Key? key}) : super(key: key);
 
+  static const List<Tab> tabs = <Tab>[
+    Tab(
+      text: 'start',
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
-    return CustomAppBar(hasActions: false);
+    return DefaultTabController(
+        length: tabs.length,
+        child: Builder(builder: (BuildContext context) {
+          final TabController tabController =
+              DefaultTabController.of(context)!; // its never null
+          tabController.addListener(() {
+            if (!tabController.indexIsChanging) {}
+          });
+
+          return Scaffold(
+            appBar: CustomAppBar(hasActions: false),
+            body: Container(),
+          );
+        }));
   }
 }
