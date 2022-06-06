@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:liela/widgets/custom_appBar.dart';
 
+import 'onboarding_tabs/start_screen.dart';
+
 class OnboardingScreen extends StatelessWidget {
   static const String routeName = '/onboarding';
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -23,7 +25,11 @@ class OnboardingScreen extends StatelessWidget {
 
           return Scaffold(
             appBar: CustomAppBar(hasActions: false),
-            body: Container(),
+            body: TabBarView(
+              children: [
+                Start(tabController: tabController,),
+              ],
+            ),
           );
         }));
   }
