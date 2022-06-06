@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:liela/Screens/onboarding/onboarding_screen.dart';
 import 'package:liela/Screens/user/user_screen.dart';
 import 'package:liela/blocs/swipe/swipe_bloc.dart';
 import 'package:liela/screens.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.grey,
           ),
           onGenerateRoute: AppRouter.generateRoute,
-          initialRoute: HomeScreen.routeName,
+          initialRoute: OnboardingScreen.routeName,
 
         ));
   }

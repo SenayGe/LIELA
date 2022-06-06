@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
+  final bool hasActions;
   const CustomAppBar({
     Key? key,
+    required this.hasActions,
   }) : super(key: key);
 
   @override
@@ -30,9 +32,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
           ),
         ],
       ),
-      actions: [
+      actions: hasActions ? [
         IconButton(icon: Icon(Icons.filter_alt_outlined, color: Theme.of(context).primaryColor,) , onPressed: (){})
-      ],
+      ]: null,
 
     );
   }

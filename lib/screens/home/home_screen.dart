@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(hasActions: true,),
       body: BlocBuilder<SwipeBloc, SwipeState>(builder: (context, state) {
         if (state is SwipeLoading) {
           return Center(
