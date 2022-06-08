@@ -39,10 +39,9 @@ class Start extends StatelessWidget {
               SizedBox(
                 height: 20.0,
               ),
-
             ],
           ),
-          CustomButton(tabController: tabController,)
+          CustomButton(tabController: tabController, text: 'START',)
         ],
       ),
     );
