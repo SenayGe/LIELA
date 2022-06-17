@@ -19,6 +19,9 @@ class CustomImageContainer extends StatelessWidget {
                 horizontal: BorderSide(color: Theme.of(context).primaryColor, width: 1.5)
             )
         ),
+        child: Align(
+            //alignment: Alignment.bottomRight,
+            child: Icon (Icons.add_circle, color: Colors.pink.shade300 ,)),
       ),
     );
   }
