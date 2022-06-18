@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liela/Screens/onboarding/widgets/custom_button.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
+
 
 class Start extends StatelessWidget {
   final TabController tabController;
@@ -41,6 +43,13 @@ class Start extends StatelessWidget {
               ),
             ],
           ),
+          StepProgressIndicator(
+            totalSteps: 6,
+            currentStep: tabController.index + 1,
+            selectedColor: Theme.of(context).primaryColor,
+            unselectedColor: Theme.of(context).backgroundColor,
+          ),
+
           CustomButton(tabController: tabController, text: 'START',)
         ],
       ),
