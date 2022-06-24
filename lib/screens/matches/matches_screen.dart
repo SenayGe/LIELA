@@ -62,11 +62,18 @@ class MatchesScreen extends StatelessWidget {
                 itemCount: activeMatches.length,
                 itemBuilder: (context, index){
                   return Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       UserSmallPic(imgUrl: activeMatches[index].matchedUser.imageUrls[1]),
-                      Text( activeMatches[index].matchedUser.name , style: Theme.of(context).textTheme.headline6,),
-                      Text(activeMatches[index].chats[0].messages[0].message, style: Theme.of(context).textTheme.bodyText1,),
-                      Text(activeMatches[index].chats[0].messages[0].timeString, style: Theme.of(context).textTheme.bodyText1,)
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text( activeMatches[index].matchedUser.name , style: Theme.of(context).textTheme.headline6,),
+                          Text(activeMatches[index].chats[0].messages[0].message, style: Theme.of(context).textTheme.bodyText1,),
+                          Text(activeMatches[index].chats[0].messages[0].timeString, style: Theme.of(context).textTheme.bodyText1,)
+                        ],
+                      ),
+
                     ],
                   );
 
