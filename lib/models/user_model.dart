@@ -59,7 +59,22 @@ class User extends Equatable{
         jobTitle: 'Job Title here'
     ),
     User(
-        id: 1,
+        id: 3,
+        name: 'Fonzie',
+        age: 20,
+        imageUrls: [
+          'https://images.unsplash.com/photo-1591311337241-cecfd26f1da1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2thdGVib2FyZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+          'https://images.unsplash.com/photo-1569135579442-d37b7a0ea74e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2thdGVib2FyZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+          'https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2thdGVib2FyZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+          'https://images.unsplash.com/photo-1550792220-553fd02a239c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c2thdGVib2FyZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+          'https://images.unsplash.com/photo-1620283687963-4733dbf7359d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHNrYXRlYm9hcmRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+          'https://images.unsplash.com/photo-1516687646495-0679d81f6ac1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHNrYXRlYm9hcmRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+        ],
+        bio: 'My bio goes here',
+        jobTitle: 'Job Title here'
+    ),
+    User(
+        id: 4,
         name: 'Gon',
         age: 20,
         imageUrls: [
@@ -72,7 +87,24 @@ class User extends Equatable{
         ],
         bio: 'My bio goes here',
         jobTitle: 'Job Title here'
-    )
+    ),
+    User(
+        id: 5,
+        name: 'Mugsy',
+        age: 20,
+        imageUrls: [
+          'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Ym94aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+          'https://images.unsplash.com/photo-1590599652694-4179dbc13a54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzF8fGJveGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+          'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fG1hcnRpYWwlMjBhcnRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+          'https://images.unsplash.com/photo-1526889588514-2e695856df85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bWFydGlhbCUyMGFydHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+          'https://images.unsplash.com/photo-1476525223214-c31ff100e1ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWFydGlhbCUyMGFydHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+          'https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFydGlhbCUyMGFydHN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+        ],
+        bio: 'My bio goes here',
+        jobTitle: 'Job Title here'
+    ),
+
+
   ];
 
 }
