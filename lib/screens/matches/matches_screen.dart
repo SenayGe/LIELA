@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:liela/Screens/chat/chat_screen.dart';
 import 'package:liela/models/models.dart';
 import 'package:liela/widgets/custom_appBar.dart';
 import 'package:liela/widgets/widgets.dart';
@@ -51,7 +52,7 @@ class MatchesScreen extends StatelessWidget {
                     }),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Text(
                 'Your Chats',
@@ -61,20 +62,27 @@ class MatchesScreen extends StatelessWidget {
                 shrinkWrap: true,
                 itemCount: activeMatches.length,
                 itemBuilder: (context, index){
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      UserSmallPic(imgUrl: activeMatches[index].matchedUser.imageUrls[1]),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text( activeMatches[index].matchedUser.name , style: Theme.of(context).textTheme.headline6,),
-                          Text(activeMatches[index].chats[0].messages[0].message, style: Theme.of(context).textTheme.bodyText1,),
-                          Text(activeMatches[index].chats[0].messages[0].timeString, style: Theme.of(context).textTheme.bodyText1,)
-                        ],
-                      ),
+                  return InkWell(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        UserSmallPic(imgUrl: activeMatches[index].matchedUser.imageUrls[1]),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text( activeMatches[index].matchedUser.name , style: Theme.of(context).textTheme.headline6,),
 
-                    ],
+                            Text(activeMatches[index].chats[0].messages[0].message, style: Theme.of(context).textTheme.bodyText2,),
+                            SizedBox(height: 5,),
+                            Text(activeMatches[index].chats[0].messages[0].timeString, style: Theme.of(context).textTheme.bodyText2,)
+                          ],
+                        ),
+                      ],
+                    ),
+                    onTap: (){
+                      Navigator.pushNamed(context, ChatScreen.routeName, arguments: activeMatches[index]);
+
+                    },
                   );
 
                 }
