@@ -7,7 +7,7 @@ class ChatScreen extends StatelessWidget {
 
   final UserMatch userMatch;
 
-  const ChatScreen({ required this.userMatch ,Key? key}) : super(key: key);
+  const ChatScreen({required this.userMatch, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +22,66 @@ class ChatScreen extends StatelessWidget {
               radius: 17,
               backgroundImage: NetworkImage(userMatch.matchedUser.imageUrls[1]),
             ),
-            Text(userMatch.matchedUser.name, style: Theme.of(context).textTheme.bodyText1!.copyWith(fontWeight: FontWeight.w500),)
+            Text(
+              userMatch.matchedUser.name,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1!
+                  .copyWith(fontWeight: FontWeight.w500),
+            )
           ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: userMatch.chats[0].messages.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                  title: userMatch.chats[0].messages[index].senderId == 1
+                      ? Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: Theme.of(context).backgroundColor,
+                              ),
+                              child: Text(
+                                  userMatch.chats[0].messages[index].message,
+                                  style:
+                                      Theme.of(context).textTheme.bodyText2)),
+                        )
+                      : Align(
+                          alignment: Alignment.topLeft,
+                          child: Row(
+                            children: [
+                              CircleAvatar(
+                                radius: 17,
+                                backgroundImage: NetworkImage(
+                                    userMatch.matchedUser.imageUrls[1]),
+                              ),
+                              SizedBox(width: 8,),
+                              Container(
+                                padding: EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  color: Colors.indigo.shade400,
+                                ),
+                                child: Text(
+                                  userMatch.chats[0].messages[index].message,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyText2!
+                                      .copyWith(color: Colors.white),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ));
+            },
+          ),
         ),
       ),
     );
