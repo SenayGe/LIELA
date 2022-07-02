@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:liela/Screens/onboarding/onboarding_screen.dart';
-import 'package:liela/Screens/user/user_screen.dart';
+import 'package:liela/screens.dart';
 import 'package:liela/models/models.dart';
 
 import '../screens.dart';
@@ -23,6 +22,12 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => UsersScreen(user: args as User));
       case OnboardingScreen.routeName:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
+      case MatchesScreen.routeName:
+        return MaterialPageRoute(builder: (_) => MatchesScreen());
+      case ChatScreen.routeName:
+        return MaterialPageRoute(builder: (_) => ChatScreen(userMatch: args as UserMatch));
+      case ProfileScreen.routeName:
+        return MaterialPageRoute(builder: (_) => ProfileScreen());
     /*case '/LoginScreen':
         if (args is String){
           return MaterialPageRoute(
