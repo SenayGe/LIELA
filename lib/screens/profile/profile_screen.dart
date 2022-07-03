@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:liela/models/models.dart';
 import 'package:liela/widgets/custom_appBar.dart';
@@ -58,12 +59,37 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TitleWithIcon(title: 'Biography', icon: Icons.edit,),
-              Text(user.bio),
+              Text(user.bio, style: TextStyle(height: 1.5),),
               TitleWithIcon(title: 'Pictures', icon: Icons.edit,),
+              SizedBox(
+                height: 125,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    itemBuilder: (context, index){
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Container(
+                          height: 125,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black12),
+                              borderRadius: BorderRadius.circular(5),
+                              image: DecorationImage (image: NetworkImage(user.imageUrls[index]), fit: BoxFit.cover)
+                          ),
+
+                        ),
+                      );
+                    }
+                ),
+              ),
               TitleWithIcon(title: 'Location', icon: Icons.edit,),
+              Text('Asmara, Eritrea', style: TextStyle(height: 1.5),),
               TitleWithIcon(title: 'Interests', icon: Icons.edit,),
+
 
             ],
           )
