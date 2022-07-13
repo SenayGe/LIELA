@@ -7,6 +7,7 @@ class AuthRepository extends BaseAuthRepository {
 
   AuthRepository ({auth.FirebaseAuth? firebaseAuth}) :
       _firebaseAuth = firebaseAuth ?? auth.FirebaseAuth.instance;
+
   @override
   Future<auth.User?> signUp({required String email, required String password}) async{
     try{
