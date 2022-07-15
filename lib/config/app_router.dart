@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:liela/cubits/signup/signup_cubit.dart';
+import 'package:liela/repositories/auth_repository.dart';
 import 'package:liela/screens.dart';
 import 'package:liela/models/models.dart';
 
@@ -21,7 +24,12 @@ class AppRouter {
       case UsersScreen.routeName:
         return MaterialPageRoute(builder: (_) => UsersScreen(user: args as User));
       case OnboardingScreen.routeName:
-        return MaterialPageRoute(builder: (_) => OnboardingScreen());
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                create: (_) => SignupCubit(authRepository: context.read<AuthRepository>()),
+                child: OnboardingScreen(),
+            ),
+        );
       case MatchesScreen.routeName:
         return MaterialPageRoute(builder: (_) => MatchesScreen());
       case ChatScreen.routeName:
@@ -35,7 +43,7 @@ class AppRouter {
                 data: args,
               )
           );
-        }
+        }c
         // If args is not of the correct type
         return _errorRoute(); //TODO: Define _errorRoutee()*/
 
