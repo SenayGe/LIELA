@@ -11,7 +11,7 @@ class StorageRepository extends BaseStorageRepository {
   Future<void> uploadImage(XFile image) async{
 
     try{
-      firebaseStorage.ref('user_1/${image.path}').putFile(File(image.path));
+      firebaseStorage.ref('user_1/${image.name}').putFile(File(image.path));
     }
     catch(_){}
 
