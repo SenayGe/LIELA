@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:cross_file/src/types/interface.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:liela/repositories/storage/base_storage_repository.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
