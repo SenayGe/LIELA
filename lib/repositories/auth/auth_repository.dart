@@ -1,6 +1,6 @@
 
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:liela/repositories/base_auth_repository.dart';
+import 'package:liela/repositories/auth/base_auth_repository.dart';
 
 class AuthRepository extends BaseAuthRepository {
   final auth.FirebaseAuth _firebaseAuth;
