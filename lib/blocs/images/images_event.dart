@@ -13,7 +13,7 @@ class UpdateImages extends ImagesEvent {
 
   final List<dynamic> imageUrls;
 
-  UpdateImages ({this.imageUrls = const []})
+  UpdateImages ({this.imageUrls = const []});
 
   @override
   List<Object> get props => [imageUrls];

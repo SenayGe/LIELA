@@ -13,7 +13,7 @@ class ImagesLoaded extends ImagesState {
 
   final List<dynamic> imageUrls;
 
-  ImagesLoaded ({this.imageUrls = const []})
+  ImagesLoaded ({this.imageUrls = const []});
 
   @override
   List<Object> get props => [imageUrls];
